@@ -7,9 +7,11 @@ import Video from "./components/custom/video";
 import Footer from "./components/custom/footer";
 import React from "react";
 import { useState } from "react";
+import LoginModal from "./components/custom/login-modal";
 
 export default function HomePage() {
     const [currentPage, setCurrentPage] = React.useState(1);
+    const [modalOpen, setModalOpen] = React.useState(false);
     const programsPerPage = 4; // Adjust this number based on your needs
     const totalPrograms = 8; // Update this based on the actual number of programs
 
@@ -143,6 +145,7 @@ export default function HomePage() {
     ];
     return (
         <div className="min-h-screen bg-white ">
+            <LoginModal isOpen={modalOpen} onClose={() => setModalOpen(false)} />
             {/* Top Navigation Bar */}
             {/* <div className="bg-black text-white text-sm">
                 <div className="max-w-[1150px] mx-auto py-2 flex justify-between items-center">
@@ -197,7 +200,7 @@ export default function HomePage() {
                             </nav>
                         </div>
                         <div className="flex items-center space-x-4">
-                            <Button variant="outline" className="bg-white text-gray-700 border-gray-300">
+                            <Button variant="outline" className="bg-white text-gray-700 border-gray-300" onClick={() => setModalOpen(true)}>
                                 登录
                             </Button>
                             {/* <Button className="bg-gradient-to-r from-purple-600 to-indigo-600 text-white">Get Started</Button> */}
