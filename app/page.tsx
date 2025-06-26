@@ -1,6 +1,6 @@
 "use client";
 import Image from "next/image";
-import { ChevronDown, Search, ShoppingCart, ChevronLeft, ChevronRight, Play } from "lucide-react";
+import { ChevronDown, Search, ShoppingCart, ChevronLeft, ChevronRight, Play, ArrowRight } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { Card, CardContent } from "@/components/ui/card";
 import Video from "./components/custom/video";
@@ -169,12 +169,12 @@ export default function HomePage() {
 
             {/* Main Navigation */}
             <nav className="bg-white border-b border-gray-200">
-                <div className="max-w-[1150px] mx-auto px-4 py-4 flex justify-between items-center">
-                    <div className="flex items-center space-x-8">
+                <div className="max-w-[1150px] mx-auto px-4 py-4 flex flex-col md:flex-row justify-between items-center">
+                    <div className="flex items-center space-x-8 mb-4 md:mb-0">
                         <div className="flex items-center space-x-2">
-                            <div className="w-8 h-8 bg-blue-600 rounded-full flex items-center justify-center">
+                            <div className="w-8 h-8 bg-purple-600 rounded-full flex items-center justify-center">
                                 <div className="w-6 h-6 bg-white rounded-full flex items-center justify-center">
-                                    <div className="w-4 h-4 bg-blue-600 rounded-full"></div>
+                                    <div className="w-4 h-4 bg-purple-600 rounded-full"></div>
                                 </div>
                             </div>
                             <span className="text-xl font-semibold text-gray-900">CFA Institute</span>
@@ -183,35 +183,35 @@ export default function HomePage() {
                     </div>
 
                     <div className="flex items-center space-x-8">
-                        <div className="flex items-center space-x-6">
-                            <div className="flex items-center space-x-1 cursor-pointer hover:text-blue-600">
+                        <div className="flex items-center space-x-6 flex-wrap">
+                            <div className="flex items-center space-x-1 cursor-pointer hover:text-purple-600">
                                 <span className="font-medium">Programs</span>
                                 <ChevronDown className="w-4 h-4" />
                             </div>
-                            <div className="flex items-center space-x-1 cursor-pointer hover:text-blue-600">
+                            <div className="flex items-center space-x-1 cursor-pointer hover:text-purple-600">
                                 <span className="font-medium">Membership</span>
                                 <ChevronDown className="w-4 h-4" />
                             </div>
-                            <div className="flex items-center space-x-1 cursor-pointer hover:text-blue-600">
+                            <div className="flex items-center space-x-1 cursor-pointer hover:text-purple-600">
                                 <span className="font-medium">Insights</span>
                                 <ChevronDown className="w-4 h-4" />
                             </div>
-                            <div className="flex items-center space-x-1 cursor-pointer hover:text-blue-600">
+                            <div className="flex items-center space-x-1 cursor-pointer hover:text-purple-600">
                                 <span className="font-medium">Standards</span>
                                 <ChevronDown className="w-4 h-4" />
                             </div>
-                            <div className="flex items-center space-x-1 cursor-pointer hover:text-blue-600">
+                            <div className="flex items-center space-x-1 cursor-pointer hover:text-purple-600">
                                 <span className="font-medium">About</span>
                                 <ChevronDown className="w-4 h-4" />
                             </div>
                         </div>
-                        <Search className="w-5 h-5 cursor-pointer hover:text-blue-600" />
+                        <Search className="w-5 h-5 cursor-pointer hover:text-purple-600" />
                     </div>
                 </div>
             </nav>
 
             {/* Hero Section */}
-            <section className="bg-gradient-to-r from-indigo-900 via-blue-900 to-purple-900 text-white">
+            <section className="bg-gradient-to-br from-purple-900 via-indigo-900 to-purple-800 text-white">
                 <div className="max-w-[1150px] mx-auto px-4 py-16 lg:py-24">
                     <div className="grid lg:grid-cols-2 gap-12 items-center">
                         <div className="space-y-6">
@@ -270,7 +270,7 @@ export default function HomePage() {
                         {/* Right Stats Grid */}
                         <div className="grid grid-cols-2 gap-4">
                             {/* Active CFA Charterholders */}
-                            <div className="bg-gradient-to-br from-blue-500 to-blue-600 rounded-2xl p-8 text-white">
+                            <div className="bg-gradient-to-br from-blue-500 to-purple-600 rounded-2xl p-8 text-white">
                                 <div className="text-5xl font-bold mb-2">190k+</div>
                                 <div className="text-lg font-medium">
                                     Active CFA
@@ -312,7 +312,7 @@ export default function HomePage() {
             </section>
 
             {/* Feature Cards */}
-            <section className="bg-gray-900 text-white">
+            <section className=" bg-gradient-to-r from-purple-600 to-indigo-600 text-white">
                 <div className="max-w-[1150px] mx-auto px-4 py-12">
                     <div className="grid md:grid-cols-3 gap-8">
                         <div className="space-y-4">
@@ -379,7 +379,7 @@ export default function HomePage() {
                                                 className="w-full h-64 object-cover transition-transform duration-300 group-hover:scale-105"
                                             />
                                         </div>
-                                        <h3 className={`text-xl font-semibold ${program.highlight ? "text-blue-600" : "text-gray-900"}`}>
+                                        <h3 className={`text-xl font-semibold ${program.highlight ? "text-purple-600" : "text-gray-900"}`}>
                                             {program.title}
                                         </h3>
                                     </div>
@@ -394,7 +394,7 @@ export default function HomePage() {
                                         onClick={() => goToSlide(index)}
                                         className={`w-3 h-3 rounded-full transition-colors ${
                                             Math.floor(currentIndex / itemsPerView) === index
-                                                ? "bg-blue-600"
+                                                ? "bg-purple-600"
                                                 : "bg-gray-300 hover:bg-gray-400"
                                         }`}
                                         aria-label={`Go to slide ${index + 1}`}
@@ -404,11 +404,9 @@ export default function HomePage() {
                         </div>
 
                         {/* Help Button */}
+
                         <div className="text-center mt-16">
-                            <Button
-                                size="lg"
-                                className="bg-blue-600 hover:bg-blue-700 text-white px-8 py-3 rounded-full text-lg font-medium"
-                            >
+                            <Button size="lg" className="bg-gradient-to-r from-purple-600 to-indigo-600 text-white">
                                 Help me choose
                             </Button>
                         </div>
@@ -447,7 +445,7 @@ export default function HomePage() {
                     </div>
 
                     <div className="text-center">
-                        <Button className="bg-blue-600 hover:bg-blue-700 text-white px-8 py-3 rounded-full">View more insights</Button>
+                        <Button className="bg-gradient-to-r from-purple-600 to-indigo-600 text-white">View more insights</Button>
                     </div>
                 </div>
             </section>
@@ -486,7 +484,7 @@ export default function HomePage() {
 
                             <div className="flex space-x-2">
                                 {[...Array(7)].map((_, i) => (
-                                    <div key={i} className={`w-3 h-3 rounded-full ${i === 0 ? "bg-blue-600" : "bg-gray-300"}`} />
+                                    <div key={i} className={`w-3 h-3 rounded-full ${i === 0 ? "bg-purple-600" : "bg-gray-300"}`} />
                                 ))}
                             </div>
 
@@ -497,8 +495,9 @@ export default function HomePage() {
 
                         <div className="text-center">
                             <Button
+                                size="lg"
                                 variant="outline"
-                                className="border-blue-600 text-blue-600 hover:bg-blue-600 hover:text-white px-8 py-3 rounded-full"
+                                className="border-purple-600 text-purple-600 hover:bg-purple-600 hover:text-white"
                             >
                                 View all
                             </Button>
