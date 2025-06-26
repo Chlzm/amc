@@ -10,4 +10,4 @@ yarn.lock
 /.history
 /packages/mobile/dist
 /packages/taro-ui-demo/dist
-
+.next
