@@ -1,0 +1,13 @@
+pc/dist/*
+node_modules
+invitation_qr_code/*
+*/node_modules
+.idea
+v1
+*.idea
+idea
+yarn.lock
+/.history
+/packages/mobile/dist
+/packages/taro-ui-demo/dist
+

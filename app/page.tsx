@@ -1,6 +1,6 @@
 "use client";
 import Image from "next/image";
-import { ChevronDown, Search, ShoppingCart, ChevronLeft, ChevronRight, Play, ArrowRight } from "lucide-react";
+import { ChevronDown, Search, ShoppingCart, ChevronLeft, ChevronRight, Play, BookOpen } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { Card, CardContent } from "@/components/ui/card";
 import Video from "./components/custom/video";
@@ -144,7 +144,7 @@ export default function HomePage() {
     return (
         <div className="min-h-screen bg-white ">
             {/* Top Navigation Bar */}
-            <div className="bg-black text-white text-sm">
+            {/* <div className="bg-black text-white text-sm">
                 <div className="max-w-[1150px] mx-auto py-2 flex justify-between items-center">
                     <div className="flex space-x-6">
                         <a href="#" className="hover:text-gray-300">
@@ -165,67 +165,58 @@ export default function HomePage() {
                         <ShoppingCart className="w-4 h-4" />
                     </div>
                 </div>
-            </div>
+            </div> */}
 
             {/* Main Navigation */}
-            <nav className="bg-white border-b border-gray-200">
-                <div className="max-w-[1150px] mx-auto px-4 py-4 flex flex-col md:flex-row justify-between items-center">
-                    <div className="flex items-center space-x-8 mb-4 md:mb-0">
-                        <div className="flex items-center space-x-2">
-                            <div className="w-8 h-8 bg-purple-600 rounded-full flex items-center justify-center">
-                                <div className="w-6 h-6 bg-white rounded-full flex items-center justify-center">
-                                    <div className="w-4 h-4 bg-purple-600 rounded-full"></div>
+            <header className="bg-white border-b border-gray-200 sticky top-0 z-50">
+                <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+                    <div className="flex justify-between items-center h-16">
+                        <div className="flex items-center space-x-8">
+                            <div className="flex items-center space-x-2">
+                                <div className="w-8 h-8 bg-gradient-to-r from-purple-600 to-indigo-600 rounded-lg flex items-center justify-center">
+                                    <BookOpen className="w-5 h-5 text-white" />
                                 </div>
+                                <span className="text-xl font-bold text-gray-900">AMC</span>
                             </div>
-                            <span className="text-xl font-semibold text-gray-900">CFA Institute</span>
-                            <sup className="text-xs">®</sup>
+                            <nav className="hidden md:flex space-x-8">
+                                <a href="#" className="text-gray-700 hover:text-purple-600 font-medium">
+                                    菜单一
+                                </a>
+                                <a href="#" className="text-gray-700 hover:text-purple-600 font-medium">
+                                    菜单二
+                                </a>
+                                <a href="#" className="text-gray-700 hover:text-purple-600 font-medium">
+                                    菜单三
+                                </a>
+                                <a href="#" className="text-gray-700 hover:text-purple-600 font-medium">
+                                    菜单四
+                                </a>
+                                <a href="#" className="text-gray-700 hover:text-purple-600 font-medium">
+                                    菜单五
+                                </a>
+                            </nav>
                         </div>
-                    </div>
-
-                    <div className="flex items-center space-x-8">
-                        <div className="flex items-center space-x-6 flex-wrap">
-                            <div className="flex items-center space-x-1 cursor-pointer hover:text-purple-600">
-                                <span className="font-medium">Programs</span>
-                                <ChevronDown className="w-4 h-4" />
-                            </div>
-                            <div className="flex items-center space-x-1 cursor-pointer hover:text-purple-600">
-                                <span className="font-medium">Membership</span>
-                                <ChevronDown className="w-4 h-4" />
-                            </div>
-                            <div className="flex items-center space-x-1 cursor-pointer hover:text-purple-600">
-                                <span className="font-medium">Insights</span>
-                                <ChevronDown className="w-4 h-4" />
-                            </div>
-                            <div className="flex items-center space-x-1 cursor-pointer hover:text-purple-600">
-                                <span className="font-medium">Standards</span>
-                                <ChevronDown className="w-4 h-4" />
-                            </div>
-                            <div className="flex items-center space-x-1 cursor-pointer hover:text-purple-600">
-                                <span className="font-medium">About</span>
-                                <ChevronDown className="w-4 h-4" />
-                            </div>
+                        <div className="flex items-center space-x-4">
+                            <Button variant="outline" className="bg-white text-gray-700 border-gray-300">
+                                登录
+                            </Button>
+                            {/* <Button className="bg-gradient-to-r from-purple-600 to-indigo-600 text-white">Get Started</Button> */}
                         </div>
-                        <Search className="w-5 h-5 cursor-pointer hover:text-purple-600" />
                     </div>
                 </div>
-            </nav>
+            </header>
 
             {/* Hero Section */}
             <section className="bg-gradient-to-br from-purple-900 via-indigo-900 to-purple-800 text-white">
                 <div className="max-w-[1150px] mx-auto px-4 py-16 lg:py-24">
                     <div className="grid lg:grid-cols-2 gap-12 items-center">
                         <div className="space-y-6">
-                            <h1 className="text-4xl lg:text-6xl font-bold leading-tight">
-                                New cohort
-                                <br />
-                                starts soon
-                            </h1>
+                            <h1 className="text-4xl lg:text-6xl font-bold leading-tight">AMC考试政策重大调整</h1>
                             <p className="text-lg lg:text-xl text-blue-100 max-w-md">
-                                Expand your network and upskill in climate investing. The next cohort of the Climate Risk, Valuation, and
-                                Investing Certificate starts 7 July.
+                                AMC10/12: 2025年11月的考试将强制采用线下纸质形式，全球考生需前往指定考点参加，线上通道永久关闭
                             </p>
                             <Button className="bg-white text-gray-900 hover:bg-gray-100 px-8 py-3 rounded-full font-medium">
-                                Enroll today
+                                查看详情
                             </Button>
                         </div>
                         <div className="relative">
@@ -249,7 +240,8 @@ export default function HomePage() {
                         {/* Left Content */}
                         <div className="space-y-8">
                             <h1 className="text-4xl lg:text-5xl font-bold text-gray-900 leading-tight">
-                                Empowering the investment industry to realize the world's greatest possibilities
+                                {/* Empowering the investment industry to realize the world's greatest possibilities */}
+                                MAA协会，AMC系列禁赛介绍
                             </h1>
 
                             <p className="text-lg text-gray-700 leading-relaxed">
@@ -263,7 +255,7 @@ export default function HomePage() {
                                 size="lg"
                                 className="bg-white text-gray-900 border-gray-300 hover:bg-gray-50 rounded-full px-8 py-3"
                             >
-                                Learn more
+                                查看更多
                             </Button>
                         </div>
 
@@ -316,19 +308,19 @@ export default function HomePage() {
                 <div className="max-w-[1150px] mx-auto px-4 py-12">
                     <div className="grid md:grid-cols-3 gap-8">
                         <div className="space-y-4">
-                            <div className="text-sm text-gray-400 uppercase tracking-wide">CFA Institute programs</div>
+                            <div className="text-sm text-white uppercase tracking-wide">近期重要事件文章展示</div>
                             <h3 className="text-xl font-semibold">Level up your investment mastery at every stage of your career</h3>
-                            <div className="text-blue-400">→</div>
+                            <div className="text-green-400">→</div>
                         </div>
                         <div className="space-y-4">
-                            <div className="text-sm text-gray-400 uppercase tracking-wide">Ethics and standards</div>
+                            <div className="text-sm text-white uppercase tracking-wide">Ethics and standards</div>
                             <h3 className="text-xl font-semibold">Explore standards for investment professionals</h3>
-                            <div className="text-blue-400">→</div>
+                            <div className="text-green-400">→</div>
                         </div>
                         <div className="space-y-4">
-                            <div className="text-sm text-gray-400 uppercase tracking-wide">Professional network</div>
+                            <div className="text-sm text-white uppercase tracking-wide">Professional network</div>
                             <h3 className="text-xl font-semibold">Join our global community leading the future of finance</h3>
-                            <div className="text-blue-400">→</div>
+                            <div className="text-green-400">→</div>
                         </div>
                     </div>
                 </div>
@@ -340,7 +332,7 @@ export default function HomePage() {
                     {/* Header Section */}
                     <div className="max-w-6xl mx-auto py-16">
                         <div className="text-center mb-16">
-                            <h1 className="text-4xl md:text-5xl font-bold text-gray-900 mb-6">Explore all our programs and certificates</h1>
+                            <h2 className="text-4xl md:text-5xl font-bold text-gray-900 mb-6">禁赛二级页面入口</h2>
                             <p className="text-lg text-gray-600 max-w-4xl mx-auto leading-relaxed">
                                 CFA Institute offers a diverse range of programs and certificates designed to meet the needs of finance
                                 professionals across various career stages and specializations.
@@ -420,7 +412,7 @@ export default function HomePage() {
             <section className="py-16 bg-gray-50">
                 <div className="container max-w-[1150px] mx-auto px-4">
                     <div className="text-center mb-12">
-                        <h2 className="text-4xl font-bold text-gray-900 mb-8">In-depth insight from Research and Policy Center</h2>
+                        <h2 className="text-4xl font-bold text-gray-900 mb-8">历史文章展示</h2>
                     </div>
 
                     <div className="grid md:grid-cols-3 gap-8 mb-8">
@@ -453,7 +445,7 @@ export default function HomePage() {
             <section className="py-16 bg-gray-100">
                 <div className="container max-w-[1150px] mx-auto px-4">
                     <div className="text-center mb-12">
-                        <h2 className="text-4xl font-bold text-gray-900 mb-8">In Brief articles</h2>
+                        <h2 className="text-4xl font-bold text-gray-900 mb-8">学术性文章展示</h2>
                     </div>
 
                     <div className="relative">

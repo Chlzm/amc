@@ -133,7 +133,7 @@ export default function Component() {
             <div className="max-w-[1150px] mx-auto">
                 {/* Header */}
                 <div className="text-center mb-12">
-                    <h1 className="text-4xl md:text-5xl font-light text-white mb-4">Voices of our community</h1>
+                    <h2 className="text-4xl md:text-5xl font-light text-white mb-4">嘉宾视频</h2>
                     <p className="text-lg md:text-xl text-white/90 font-light">Hear from CFA Institute alumni across the world.</p>
                 </div>
 
